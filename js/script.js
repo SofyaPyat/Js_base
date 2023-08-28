@@ -25,14 +25,25 @@ const movieDB = {
 };
 
 
+movieDB.movies.sort(sortFilm);
+
+function sortFilm (a,b) {
+    if (a.toLowerCase() > b.toLowerCase()) {
+        return 1;
+    } else {
+        return -1
+    }
+}
+
 
 
 document.querySelector("div.promo__adv").remove();
-
 const promo_bg = document.querySelector("div.promo__bg");
 const genre = promo_bg.querySelector("div.promo__genre");
+const bc_im = {background: "/img/bg.jpg"}
 
 genre.textContent = "ДРАМА";
 
 
+promo_bg.classList.add(bc_im);
 
